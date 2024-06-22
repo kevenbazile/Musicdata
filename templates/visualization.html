@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Popularity of Brooklyn Artists</h1>
+        </header>
+        <main>
+            <div id="popularity-chart"></div>
+        </main>
+    </div>
+    <script>
+        var graphJSON = {{ graphJSON | safe }};
+        Plotly.newPlot('popularity-chart', graphJSON.data, graphJSON.layout);
+    </script>
+</body>
+</html>

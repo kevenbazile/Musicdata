@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Data Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Music Data Dashboard</h1>
+        </header>
+        <main>
+            <form action="/get_data" method="POST">
+                <button type="submit">Fetch Brooklyn Artists Data</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

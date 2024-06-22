@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Brooklyn Artists Data</h1>
+        </header>
+        <main>
+            <div class="artist-data">
+                {% for artist in artists %}
+                <div class="artist-card">
+                    <h2>{{ artist.name }}</h2>
+                    <p><strong>Followers:</strong> {{ artist.followers }}</p>
+                    <p><strong>Genres:</strong> {{ artist.genres }}</p>
+                    <p><strong>Popularity:</strong> {{ artist.popularity }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <h2>Top Tracks Released in 2024</h2>
+            <div class="track-data">
+                {% for track in top_tracks %}
+                <div class="track-card">
+                    <p><strong>Artist:</strong> {{ track.artist_name }}</p>
+                    <p><strong>Track:</strong> {{ track.track_name }}</p>
+                    <p><strong>Popularity:</strong> {{ track.popularity }}</p>
+                    <p><strong>Release Date:</strong> {{ track.release_date }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </main>
+    </div>
+</body>
+</html>
